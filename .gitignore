@@ -8,5 +8,4 @@ lib/
 
 .addons
 .DS_Store
-default_env.trees
-.gitattributes
+.default_env.trees
