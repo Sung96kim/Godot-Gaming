@@ -5,3 +5,8 @@
 bin/
 build/
 lib/
+
+.addons
+.DS_Store
+default_env.trees
+.gitattributes
