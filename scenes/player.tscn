@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://assets/characters/char3/Character with sword and shield/walk/walk up2.png" type="Texture" id=1]
 [ext_resource path="res://scripts/playerScript.gd" type="Script" id=2]
@@ -33,6 +33,46 @@
 [ext_resource path="res://assets/characters/char3/Character with sword and shield/walk/walk down4.png" type="Texture" id=31]
 [ext_resource path="res://assets/characters/char3/Character with sword and shield/walk/walk left3.png" type="Texture" id=32]
 [ext_resource path="res://assets/characters/char3/Character with sword and shield/idle/idle left3.png" type="Texture" id=33]
+[ext_resource path="res://assets/characters/char3/death animation/death1.png" type="Texture" id=34]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack down3.png" type="Texture" id=35]
+[ext_resource path="res://assets/characters/char3/death animation/death3.png" type="Texture" id=36]
+[ext_resource path="res://assets/characters/char3/death animation/death2.png" type="Texture" id=37]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack down4.png" type="Texture" id=38]
+[ext_resource path="res://assets/characters/char3/death animation/death4.png" type="Texture" id=39]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack down2.png" type="Texture" id=40]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack down1.png" type="Texture" id=41]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack right4.png" type="Texture" id=42]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack right3.png" type="Texture" id=43]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack right1.png" type="Texture" id=44]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack right2.png" type="Texture" id=45]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack left4.png" type="Texture" id=46]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack up4.png" type="Texture" id=47]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/block/block up.png" type="Texture" id=48]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/block/block left.png" type="Texture" id=49]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/block/block down.png" type="Texture" id=50]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/block/block right.png" type="Texture" id=51]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack left2.png" type="Texture" id=52]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack left3.png" type="Texture" id=53]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack up2.png" type="Texture" id=54]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack up1.png" type="Texture" id=55]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack up3.png" type="Texture" id=56]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/attack/attack left1.png" type="Texture" id=57]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll up1.png" type="Texture" id=58]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll up3.png" type="Texture" id=59]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll left2.png" type="Texture" id=60]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll up2.png" type="Texture" id=61]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll down2.png" type="Texture" id=62]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll down4.png" type="Texture" id=63]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll right3.png" type="Texture" id=64]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll right2.png" type="Texture" id=65]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll left3.png" type="Texture" id=66]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll right4.png" type="Texture" id=67]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll down3.png" type="Texture" id=68]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll left4.png" type="Texture" id=69]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll up4.png" type="Texture" id=70]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll right1.png" type="Texture" id=71]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll left1.png" type="Texture" id=72]
+[ext_resource path="res://assets/characters/char3/Character with sword and shield/roll/roll down1.png" type="Texture" id=73]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 5.5 )
@@ -74,6 +114,371 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "attack_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 41 ), ExtResource( 40 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "attack_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.34 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 57 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 46 ), ExtResource( 28 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "attack_right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 42 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "attack_up"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 55 ), ExtResource( 54 ), ExtResource( 56 ), ExtResource( 47 ), ExtResource( 22 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "block_down"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "block_left"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 49 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "block_right"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 51 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "block_up"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 48 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "death"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 39 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -238,6 +643,166 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "roll_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 73 ), ExtResource( 62 ), ExtResource( 68 ), ExtResource( 63 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "roll_left"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 72 ), ExtResource( 60 ), ExtResource( 66 ), ExtResource( 69 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "roll_right"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 71 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 67 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "roll_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -482,10 +1047,23 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
+anims/attack_down = SubResource( 25 )
+anims/attack_left = SubResource( 28 )
+anims/attack_right = SubResource( 27 )
+anims/attack_up = SubResource( 29 )
+anims/block_down = SubResource( 30 )
+anims/block_left = SubResource( 31 )
+anims/block_right = SubResource( 32 )
+anims/block_up = SubResource( 33 )
+anims/death = SubResource( 26 )
 anims/idle_down = SubResource( 3 )
 anims/idle_left = SubResource( 4 )
 anims/idle_right = SubResource( 5 )
 anims/idle_up = SubResource( 6 )
+anims/roll_down = SubResource( 34 )
+anims/roll_left = SubResource( 35 )
+anims/roll_right = SubResource( 36 )
+anims/roll_up = SubResource( 37 )
 anims/walk_down = SubResource( 7 )
 anims/walk_left = SubResource( 8 )
 anims/walk_right = SubResource( 9 )
