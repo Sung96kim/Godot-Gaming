@@ -20,7 +20,7 @@
 [ext_resource path="res://assets/characters/char2/Enemy-Melee-Idle-NW.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.5, 11 )
+extents = Vector2( 9.5, 8 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -803,7 +803,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=25]
 states/Idle/node = SubResource( 35 )
-states/Idle/position = Vector2( 406, 162.5 )
+states/Idle/position = Vector2( 304, 112.5 )
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=26]
@@ -813,11 +813,11 @@ position = Vector2( 388, 209 )
 script = ExtResource( 2 )
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.5, 0 )
+position = Vector2( -3.5, 7 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -43, -2 )
+position = Vector2( -1, -1 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 hframes = 12
