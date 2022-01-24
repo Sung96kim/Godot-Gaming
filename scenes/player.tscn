@@ -458,7 +458,7 @@ blend_mode = 1
 states/Idle/node = SubResource( 15 )
 states/Idle/position = Vector2( 182, 74 )
 states/Walk/node = SubResource( 20 )
-states/Walk/position = Vector2( 417, 75 )
+states/Walk/position = Vector2( 416.5, 74.5 )
 transitions = [ "Idle", "Walk", SubResource( 23 ), "Walk", "Idle", SubResource( 24 ) ]
 start_node = "Idle"
 
@@ -466,6 +466,7 @@ start_node = "Idle"
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 388, 209 )
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
