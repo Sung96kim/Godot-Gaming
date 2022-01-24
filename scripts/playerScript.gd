@@ -23,7 +23,9 @@ func _physics_process(delta):
 		$AnimationTree.set("parameters/Walk/blend_position", velocity)
 		move_and_slide(velocity * speed)
 	
-	
+func _input(event):
+	if event.is_action_pressed("attack"):
+		$AnimationPlayer.play("attack_right")
 
 """ 
 # OLD MOVEMENT CODE
