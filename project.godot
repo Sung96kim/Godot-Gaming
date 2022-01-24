@@ -23,6 +23,15 @@ _global_script_class_icons={
 config/name="Godot-Game"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+<<<<<<<HEADrun/main_scene="res://scenes/DungeonLevel1_.tscn"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
 
 [gdnative]
 
@@ -81,4 +90,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"
