@@ -2,7 +2,18 @@ extends KinematicBody2D
 
 export(int) var speed = 115.0
 
-func _physics_process(delta):
+enum {
+	MOVE,
+	ROLL,
+	ATTACK
+}
+
+func _ready():
+	$AnimationTree.active = true
+
+var state = MOVE
+
+func move_state():
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		velocity.x += 1.0
@@ -21,11 +32,40 @@ func _physics_process(delta):
 		$AnimationTree.get("parameters/playback").travel("Walk")
 		$AnimationTree.set("parameters/Idle/blend_position", velocity)
 		$AnimationTree.set("parameters/Walk/blend_position", velocity)
-		move_and_slide(velocity * speed)
+		$AnimationTree.set("parameters/Attack/blend_position", velocity)
+		$AnimationTree.set("parameters/Roll/blend_position", velocity)
 	
-func _input(event):
-	if event.is_action_pressed("attack"):
-		$AnimationPlayer.play("attack_right")
+	move_and_slide(velocity * speed)
+	
+	if Input.is_action_just_pressed("attack"):
+		state = ATTACK
+	if Input.is_action_just_pressed("roll"):
+		state = ROLL
+
+func attack_state():
+	$AnimationTree.get("parameters/playback").travel("Attack")
+
+func roll_state():
+	$AnimationTree.get("parameters/playback").travel("Roll")
+
+func attack_animation_finished():
+	state = MOVE
+func roll_animation_finished():
+	state = MOVE
+
+func _physics_process(delta):
+	match state:
+		MOVE:
+			move_state()
+		ROLL:
+			roll_state()
+		ATTACK:
+			attack_state()
+
+
+
+
+
 
 """ 
 # OLD MOVEMENT CODE
