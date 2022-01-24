@@ -1193,8 +1193,13 @@ states/Idle/position = Vector2( 182, 74 )
 states/Roll/node = SubResource( 49 )
 states/Roll/position = Vector2( 3, 73.625 )
 states/Walk/node = SubResource( 20 )
+<<<<<<< HEAD
+states/Walk/position = Vector2( 416.5, 74.5 )
+transitions = [ "Idle", "Walk", SubResource( 23 ), "Walk", "Idle", SubResource( 24 ) ]
+=======
 states/Walk/position = Vector2( 350.5, 73.25 )
 transitions = [ "Idle", "Walk", SubResource( 23 ), "Walk", "Idle", SubResource( 24 ), "Idle", "Attack", SubResource( 43 ), "Attack", "Idle", SubResource( 44 ), "Roll", "Idle", SubResource( 50 ), "Idle", "Roll", SubResource( 51 ) ]
+>>>>>>> 1cdea01428ec7054f545c000291ce6530f8ff12c
 start_node = "Idle"
 graph_offset = Vector2( -324, 12 )
 
@@ -1202,6 +1207,7 @@ graph_offset = Vector2( -324, 12 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 388, 209 )
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
