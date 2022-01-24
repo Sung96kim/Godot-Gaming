@@ -7,7 +7,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Dungeon" parent="." instance=ExtResource( 4 )]
-show_collision = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 352, 225 )

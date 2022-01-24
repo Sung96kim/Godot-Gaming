@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/Enemies/chort/chort_idle_anim_f2.png" type="Texture" id=1]
 [ext_resource path="res://assets/Enemies/chort/chort_idle_anim_f3.png" type="Texture" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://scripts/enemyAi.gd" type="Script" id=9]
 [ext_resource path="res://scenes/Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/HurtBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Enemies/Wander.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Enemies/SoftCollision.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Stats.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 2.0
@@ -33,12 +36,20 @@ animations = [ {
 radius = 3.33333
 height = 2.66667
 
+[sub_resource type="CircleShape2D" id=5]
+radius = 29.3409
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 2.66667
+height = 0.0
+
 [node name="ChortEnemy" type="KinematicBody2D"]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 16
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 2 )
 shape = SubResource( 2 )
 
@@ -46,23 +57,38 @@ shape = SubResource( 2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="HurtBox" parent="." instance=ExtResource( 11 )]
+visible = false
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 position = Vector2( 0, 2 )
 shape = SubResource( 4 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 10 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
-visible = false
 modulate = Color( 0.0546875, 0, 1, 1 )
 position = Vector2( 0, 2.66667 )
+shape = SubResource( 5 )
+
+[node name="WanderController" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="SoftCollision" parent="." instance=ExtResource( 13 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+position = Vector2( 0, 2.66667 )
+shape = SubResource( 6 )
+
+[node name="Stats" parent="." instance=ExtResource( 14 )]
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="HurtBox"]
 [editable path="PlayerDetectionZone"]
+[editable path="SoftCollision"]
