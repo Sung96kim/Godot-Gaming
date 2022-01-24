@@ -291,7 +291,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 48
-frame = 24
+frame = 1
 __meta__ = {
 "_edit_group_": true
 }
