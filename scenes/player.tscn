@@ -803,7 +803,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=25]
 states/Idle/node = SubResource( 35 )
-states/Idle/position = Vector2( 304, 112.5 )
+states/Idle/position = Vector2( 304.5, 112.5 )
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=26]

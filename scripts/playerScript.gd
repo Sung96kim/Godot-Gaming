@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(int) var speed = 200.0
+export(int) var speed = 115.0
 
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
