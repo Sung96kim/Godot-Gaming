@@ -10,7 +10,6 @@
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 352, 225 )
 scale = Vector2( 2, 2 )
-collision_layer = 0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
