@@ -1,7 +1,7 @@
 [gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://assets/characters/char2/Enemy-Melee-Idle-S.png" type="Texture" id=1]
-[ext_resource path="res://scripts/playerScript.gd" type="Script" id=2]
+[ext_resource path="res://scripts/enemyAi.gd" type="Script" id=2]
 [ext_resource path="res://assets/characters/char2/Enemy-Melee-Attack-SW.png" type="Texture" id=3]
 [ext_resource path="res://assets/characters/char2/Enemy-Melee-Death.png" type="Texture" id=4]
 [ext_resource path="res://assets/characters/char2/Enemy-Melee-Attack-NW.png" type="Texture" id=5]
@@ -818,21 +818,19 @@ start_node = "Idle"
 radius = 68.5018
 
 [sub_resource type="CapsuleShape2D" id=37]
-radius = 21.0
-height = 26.0
+radius = 9.0
+height = 8.0
 
 [sub_resource type="CircleShape2D" id=38]
-radius = 15.0333
+radius = 7.5
 
 [node name="Boss" type="KinematicBody2D"]
 position = Vector2( 388, 209 )
 scale = Vector2( 2, 2 )
-collision_layer = 0
-collision_mask = 2
+collision_layer = 16
 script = ExtResource( 2 )
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -1.5, 6.5 )
 shape = SubResource( 1 )
 
@@ -873,6 +871,7 @@ parameters/playback = SubResource( 26 )
 parameters/Idle/blend_position = Vector2( -0.0156775, 1.22472 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 21 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource( 36 )
@@ -883,7 +882,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
-position = Vector2( 0, 7 )
+position = Vector2( -1, 0.5 )
 shape = SubResource( 37 )
 
 [node name="HitBox" parent="." instance=ExtResource( 22 )]
@@ -892,15 +891,17 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="SoftCollision" parent="." instance=ExtResource( 23 )]
-visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
-position = Vector2( 0, 8 )
+position = Vector2( -1, 5.5 )
 shape = SubResource( 38 )
 
 [node name="WanderController" parent="." instance=ExtResource( 19 )]
 
 [node name="Stats" parent="." instance=ExtResource( 24 )]
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="PlayerDetectionZone"]
 [editable path="HurtBox"]

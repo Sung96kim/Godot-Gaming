@@ -102,7 +102,7 @@ position = Vector2( 325, 457 )
 position = Vector2( 501, 241 )
 
 [node name="BigDemon5" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
-position = Vector2( 898, 239 )
+position = Vector2( 871, 276 )
 
 [node name="BigDemon6" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
 position = Vector2( 235, -227 )
@@ -121,7 +121,7 @@ scale = Vector2( 0.75, 0.75 )
 position = Vector2( 793, 208 )
 
 [node name="Zombie2" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
-position = Vector2( 1003, 214 )
+position = Vector2( 1177, 200 )
 
 [node name="Zombie3" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
 position = Vector2( 179, -90 )
@@ -134,7 +134,7 @@ position = Vector2( 1108, 497 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Zombie6" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
-position = Vector2( 1139, 340 )
+position = Vector2( 1091, 282 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="IceZombies" type="Node" parent="Enemies"]
