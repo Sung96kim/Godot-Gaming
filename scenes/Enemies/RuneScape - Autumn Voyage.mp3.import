@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RuneScape - Autumn Voyage.mp3-b767ca68374c818e9550eaac25f8f692.mp3str"
+
+[deps]
+
+source_file="res://scenes/Enemies/RuneScape - Autumn Voyage.mp3"
+dest_files=[ "res://.import/RuneScape - Autumn Voyage.mp3-b767ca68374c818e9550eaac25f8f692.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

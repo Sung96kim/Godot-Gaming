@@ -1,15 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Enemies/ChortEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Enemies/BigDemon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Dungeon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Enemies/BigZombie.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Enemies/IceZombie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Enemies/SmallZombie.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Enemies/Muddy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Enemies/Wogol.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/RuneScape - Autumn Voyage.mp3" type="AudioStream" id=10]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Dungeon" parent="." instance=ExtResource( 4 )]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Dungeon"]
+stream = ExtResource( 10 )
+autoplay = true
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 352, 225 )
+position = Vector2( 353, 249 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -17,44 +28,224 @@ current = true
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="ChortEnemy" parent="Enemies" instance=ExtResource( 1 )]
+[node name="Chort" type="Node" parent="Enemies"]
+
+[node name="ChortEnemy" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 340, 71 )
 
-[node name="ChortEnemy2" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy2" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 411, 59 )
 
-[node name="ChortEnemy3" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy3" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 533, 189 )
 
-[node name="ChortEnemy4" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy4" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 643, -185 )
 
-[node name="ChortEnemy5" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy5" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 200, -130 )
 
-[node name="ChortEnemy6" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy6" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 546, 271 )
 
-[node name="ChortEnemy7" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy7" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 319, 512 )
 scale = Vector2( 2.25, 2.25 )
 
-[node name="ChortEnemy8" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy8" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 186, 586 )
 scale = Vector2( 2.25, 2.25 )
 
-[node name="ChortEnemy9" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy9" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 176, 454 )
 scale = Vector2( 2.25, 2.25 )
 
-[node name="ChortEnemy10" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy10" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 560, 615 )
 scale = Vector2( 2.25, 2.25 )
 
-[node name="ChortEnemy11" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy11" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 980, 71 )
 scale = Vector2( 2.25, 2.25 )
 
-[node name="ChortEnemy12" parent="Enemies" instance=ExtResource( 1 )]
+[node name="ChortEnemy12" parent="Enemies/Chort" instance=ExtResource( 1 )]
 position = Vector2( 987, -213 )
 scale = Vector2( 2.25, 2.25 )
+
+[node name="ChortEnemy13" parent="Enemies/Chort" instance=ExtResource( 1 )]
+position = Vector2( 580, 230 )
+
+[node name="ChortEnemy14" parent="Enemies/Chort" instance=ExtResource( 1 )]
+position = Vector2( 440, 322 )
+
+[node name="ChortEnemy15" parent="Enemies/Chort" instance=ExtResource( 1 )]
+position = Vector2( 769, 321 )
+
+[node name="ChortEnemy16" parent="Enemies/Chort" instance=ExtResource( 1 )]
+position = Vector2( 764, 399 )
+
+[node name="ChortEnemy17" parent="Enemies/Chort" instance=ExtResource( 1 )]
+position = Vector2( 1053, -212 )
+
+[node name="BigDemons" type="Node" parent="Enemies"]
+
+[node name="BigDemon" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 278, 588 )
+
+[node name="BigDemon2" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 224, 456 )
+
+[node name="BigDemon3" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 325, 457 )
+
+[node name="BigDemon4" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 501, 241 )
+
+[node name="BigDemon5" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 898, 239 )
+
+[node name="BigDemon6" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 235, -227 )
+
+[node name="BigDemon7" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 1168, 427 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="BigDemon8" parent="Enemies/BigDemons" instance=ExtResource( 3 )]
+position = Vector2( 876, 511 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="BigZombies" type="Node" parent="Enemies"]
+
+[node name="Zombie" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
+position = Vector2( 793, 208 )
+
+[node name="Zombie2" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
+position = Vector2( 1003, 214 )
+
+[node name="Zombie3" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
+position = Vector2( 179, -90 )
+
+[node name="Zombie4" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
+position = Vector2( 134, -306 )
+
+[node name="Zombie5" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
+position = Vector2( 1108, 497 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Zombie6" parent="Enemies/BigZombies" instance=ExtResource( 5 )]
+position = Vector2( 1139, 340 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="IceZombies" type="Node" parent="Enemies"]
+
+[node name="IceZombie" parent="Enemies/IceZombies" instance=ExtResource( 6 )]
+position = Vector2( 1046, 325 )
+
+[node name="IceZombie2" parent="Enemies/IceZombies" instance=ExtResource( 6 )]
+position = Vector2( 814, 416 )
+
+[node name="IceZombie3" parent="Enemies/IceZombies" instance=ExtResource( 6 )]
+position = Vector2( 986, 483 )
+
+[node name="IceZombie4" parent="Enemies/IceZombies" instance=ExtResource( 6 )]
+position = Vector2( 376, 49 )
+
+[node name="IceZombie5" parent="Enemies/IceZombies" instance=ExtResource( 6 )]
+position = Vector2( 1022, 27 )
+
+[node name="IceZombie6" parent="Enemies/IceZombies" instance=ExtResource( 6 )]
+position = Vector2( 763, -221 )
+
+[node name="IceZombie7" parent="Enemies/IceZombies" instance=ExtResource( 6 )]
+position = Vector2( 534, 735 )
+
+[node name="SmallZombies" type="Node" parent="Enemies"]
+
+[node name="SmallZombie" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 1103, 436 )
+
+[node name="SmallZombie2" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 1087, 343 )
+
+[node name="SmallZombie3" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 813, 469 )
+
+[node name="SmallZombie4" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 1119, 234 )
+
+[node name="SmallZombie5" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 1025, -184 )
+
+[node name="SmallZombie6" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 671, -307 )
+
+[node name="SmallZombie7" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 922, -340 )
+
+[node name="SmallZombie8" parent="Enemies/SmallZombies" instance=ExtResource( 7 )]
+position = Vector2( 530, 581 )
+
+[node name="Muddy" type="Node" parent="Enemies"]
+
+[node name="Muddy" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 566, 48 )
+
+[node name="Muddy2" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 629, 53 )
+
+[node name="Muddy3" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 818, -4 )
+
+[node name="Muddy4" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 483, 186 )
+
+[node name="Muddy5" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 293, -104 )
+
+[node name="Muddy6" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 178, -319 )
+
+[node name="Muddy7" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 385, -290 )
+
+[node name="Muddy8" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 963, -154 )
+
+[node name="Muddy9" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 1054, 14 )
+
+[node name="Muddy10" parent="Enemies/Muddy" instance=ExtResource( 8 )]
+position = Vector2( 636, -300 )
+
+[node name="Wogol" type="Node" parent="Enemies"]
+
+[node name="Wogol" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 494, 55 )
+
+[node name="Wogol2" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 982, 4 )
+
+[node name="Wogol3" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 819, -80 )
+
+[node name="Wogol4" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 709, -228 )
+
+[node name="Wogol5" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 595, -322 )
+
+[node name="Wogol6" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 353, -248 )
+
+[node name="Wogol7" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 221, -173 )
+
+[node name="Wogol8" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 490, 706 )
+
+[node name="Wogol9" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 516, 694 )
+
+[node name="Wogol10" parent="Enemies/Wogol" instance=ExtResource( 9 )]
+position = Vector2( 509, 592 )
