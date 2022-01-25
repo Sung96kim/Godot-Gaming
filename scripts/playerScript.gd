@@ -5,7 +5,8 @@ export(int) var speed = 115.0
 enum {
 	MOVE,
 	ROLL,
-	ATTACK
+	ATTACK,
+	DEATH
 }
 
 func _ready():
@@ -41,12 +42,17 @@ func move_state():
 		state = ATTACK
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
+	if Input.is_action_just_pressed("death"):
+		state = DEATH
 
 func attack_state():
 	$AnimationTree.get("parameters/playback").travel("Attack")
 
 func roll_state():
 	$AnimationTree.get("parameters/playback").travel("Roll")
+
+func death_state():
+	$AnimationTree.get("parameters/playback").travel("Death")
 
 func attack_animation_finished():
 	state = MOVE
@@ -61,6 +67,8 @@ func _physics_process(delta):
 			roll_state()
 		ATTACK:
 			attack_state()
+		DEATH:
+			death_state()
 
 
 
