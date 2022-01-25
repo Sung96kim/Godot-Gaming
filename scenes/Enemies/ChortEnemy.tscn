@@ -50,7 +50,6 @@ collision_layer = 16
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 2 )
 shape = SubResource( 2 )
 
@@ -58,11 +57,12 @@ shape = SubResource( 2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="HurtBox" parent="." instance=ExtResource( 11 )]
-visible = false
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 position = Vector2( 0, 2 )
@@ -76,7 +76,6 @@ position = Vector2( 0, 2.66667 )
 shape = SubResource( 5 )
 
 [node name="WanderController" parent="." instance=ExtResource( 12 )]
-visible = false
 
 [node name="SoftCollision" parent="." instance=ExtResource( 13 )]
 
